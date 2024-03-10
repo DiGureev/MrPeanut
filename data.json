@@ -1,0 +1,658 @@
+{   "sites": {
+    "Google Maps": {
+        "tags": [
+          "maps",
+          "us"
+        ],
+        "type": "gaia_id",
+        "checkType": "message",
+        "presenseStrs": [
+          "[\"Contributions by"
+        ],
+        "absenceStrs": [
+          "My Contributions to Google Maps"
+        ],
+        "alexaRank": 1,
+        "urlMain": "https://maps.google.com/",
+        "url": "https://www.google.com/maps/contrib/{username}",
+        "usernameClaimed": "105054951427011407574",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Google Plus (archived)": {
+        "checkType": "message",
+        "type": "gaia_id",
+        "alexaRank": 1,
+        "presenseStrs": [
+          "original"
+        ],
+        "absenceStrs": [
+          "[]"
+        ],
+        "urlMain": "https://plus.google.com",
+        "urlProbe": "https://web.archive.org/web/timemap/?url=http%3A%2F%2Fplus.google.com%2F{username}&matchType=prefix&collapse=urlkey&output=json&fl=original%2Cmimetype%2Ctimestamp%2Cendtimestamp%2Cgroupcount%2Cuniqcount&filter=!statuscode%3A%5B45%5D..&limit=100000&_=1624789582128",
+        "url": "https://web.archive.org/web/*/plus.google.com/{username}*",
+        "usernameClaimed": "117522081019092547227",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "GooglePlayStore": {
+        "tags": [
+          "apps",
+          "us"
+        ],
+        "checkType": "status_code",
+        "alexaRank": 1,
+        "urlMain": "https://play.google.com/store",
+        "url": "https://play.google.com/store/apps/developer?id={username}",
+        "usernameClaimed": "Skyeng",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "YouTube": {
+        "tags": [
+          "video"
+        ],
+        "regexCheck": "^[^\\/]+$",
+        "checkType": "message",
+        "presenseStrs": [
+          "href=\"/feed/channel"
+        ],
+        "absenceStrs": [
+          "Error - Invidious",
+          "This channel does not exist"
+        ],
+        "alexaRank": 2,
+        "urlMain": "https://www.youtube.com/",
+        "url": "https://www.youtube.com/{username}",
+        "urlProbe": "https://invidious.slipfox.xyz/c/{username}",
+        "usernameClaimed": "test",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Baidu": {
+        "absenceStrs": [
+          "error_404_iframe"
+        ],
+        "presenseStrs": [
+          "user_name"
+        ],
+        "url": "https://tieba.baidu.com/home/main?un={username}",
+        "urlMain": "https://tieba.baidu.com",
+        "usernameClaimed": "reneecong",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "checkType": "message",
+        "tags": [
+          "cn"
+        ],
+        "alexaRank": 3
+      },
+      "Facebook": {
+        "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
+        "checkType": "message",
+        "absenceStrs": [
+            "EventProfilerImpl"
+        ],
+        "presenseStrs": [
+            "userID"
+        ],
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+        },
+        "alexaRank": 10,
+        "urlMain": "https://www.facebook.com/",
+        "url": "https://www.facebook.com/{username}",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "tags": [
+            "networking"
+        ]
+    },
+    "Amazon": {
+        "tags": [
+            "us"
+        ],
+        "checkType": "message",
+        "presenseStrs": [
+            "authorName"
+        ],
+        "absenceStrs": [
+            "Sorry! We couldn't find that page"
+        ],
+        "urlMain": "https://amazon.com",
+        "url": "https://amazon.com/author/{username}",
+        "usernameClaimed": "john",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "alexaRank": 11
+    },
+    "Wikipedia": {
+        "tags": [
+            "wiki"
+        ],
+        "checkType": "message",
+        "absenceStrs": [
+            "is not registered",
+            "Wikipedia does not have a"
+        ],
+        "alexaRank": 12,
+        "urlMain": "https://www.wikipedia.org/",
+        "url": "https://www.wikipedia.org/wiki/User:{username}",
+        "usernameClaimed": "Hoadlck",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+    },
+    "Reddit": {
+        "tags": [
+          "discussion",
+          "news"
+        ],
+        "checkType": "message",
+        "absenceStrs": [
+          "Sorry, nobody on Reddit goes by that name."
+        ],
+        "presenseStrs": [
+          "Post Karma"
+        ],
+        "alexaRank": 19,
+        "urlMain": "https://www.reddit.com/",
+        "url": "https://www.reddit.com/user/{username}",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Weibo": {
+        "absenceStrs": [
+            "username_box\\",
+            "info_list username\\"
+        ],
+        "presenseStrs": [
+            "pf_username\\",
+            "use_num\\"
+        ],
+        "url": "https://weibo.com/{username}",
+        "urlMain": "https://weibo.com",
+        "usernameClaimed": "clairekuo",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "headers": {
+            "Cookie": "SUB=_2AkMXyuc_f8NxqwJRmP8SyWPrbo13zAvEieKhlhbkJRMxHRl-123"
+        },
+        "checkType": "message",
+        "tags": [
+            "cn",
+            "networking"
+        ],
+        "alexaRank": 24
+    },
+    "GitHubGist": {
+        "tags": [
+            "coding",
+            "sharing"
+        ],
+        "engine": "engineRedirect",
+        "urlMain": "https://gist.github.com",
+        "url": "https://gist.github.com/{username}",
+        "source": "GitHub",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "usernameClaimed": "alex",
+        "alexaRank": 26
+    },
+    "VK": {
+        "tags": [
+          "ru"
+        ],
+        "checkType": "response_url",
+        "regexCheck": "^(?!id\\d)\\w*$",
+        "alexaRank": 27,
+        "urlMain": "https://vk.com/",
+        "url": "https://vk.com/{username}",
+        "usernameClaimed": "smith",
+        "usernameUnclaimed": "blah62831"
+      },
+      "Instagram": {
+        "disabled": true,
+        "tags": [
+          "photo"
+        ],
+        "errors": {
+          "Login • Instagram": "Login required"
+        },
+        "checkType": "message",
+        "presenseStrs": [
+          "<div id=\"splash-screen\">"
+        ],
+        "alexaRank": 32,
+        "urlMain": "https://www.instagram.com/",
+        "url": "https://www.instagram.com/{username}",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Twitch": {
+        "tags": [
+          "streaming"
+        ],
+        "urlProbe": "https://m.twitch.tv/{username}",
+        "checkType": "status_code",
+        "alexaRank": 34,
+        "urlMain": "https://www.twitch.tv/",
+        "url": "https://www.twitch.tv/{username}",
+        "usernameClaimed": "jenny",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "StackOverflow": {
+        "similarSearch": true,
+        "absenceStrs": [
+          "no-search-results"
+        ],
+        "presenseStrs": [
+          "user-info",
+          " user-details"
+        ],
+        "url": "https://stackoverflow.com/users/filter?search={username}",
+        "urlMain": "https://stackoverflow.com",
+        "usernameClaimed": "maigret",
+        "usernameUnclaimed": "noonewouldeverusethis7",
+        "checkType": "message",
+        "tags": [
+          "coding"
+        ],
+        "alexaRank": 37
+      },
+      "Ebay": {
+        "tags": [
+          "shopping",
+          "us"
+        ],
+        "checkType": "message",
+        "presenseStrs": [
+          "Positive feedback"
+        ],
+        "absenceStrs": [
+          "<svg role=\"img\" class=\"icon icon--attention-filled-small\""
+        ],
+        "headers": {
+          "user-agent": "Curl"
+        },
+        "alexaRank": 39,
+        "urlMain": "https://www.ebay.com/",
+        "url": "https://www.ebay.com/usr/{username}",
+        "usernameClaimed": "adam",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Twitter": {
+        "tags": [
+          "messaging"
+        ],
+        "headers": {
+          "sec-ch-ua": "Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
+          "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
+          "x-guest-token": "1411741418192883712"
+        },
+        "errors": {
+          "Bad guest token": "x-guest-token update required"
+        },
+        "regexCheck": "^[a-zA-Z0-9_]{1,15}$",
+        "activation": {
+          "method": "twitter",
+          "marks": [
+            "Bad guest token."
+          ],
+          "url": "https://api.twitter.com/1.1/guest/activate.json",
+          "src": "guest_token",
+          "dst": "x-guest-token"
+        },
+        "urlProbe": "https://twitter.com/i/api/graphql/ZRnOhhXPwue_JGILb9TNug/UserByScreenName?variables=%7B%22screen_name%22%3A%22{username}%22%2C%22withHighlightedLabel%22%3Atrue%7D",
+        "checkType": "message",
+        "absenceStrs": [
+          " not found"
+        ],
+        "alexaRank": 48,
+        "urlMain": "https://www.twitter.com/",
+        "url": "https://twitter.com/{username}",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewould123"
+      },
+      "Spotify": {
+        "disabled": true,
+        "tags": [
+          "music",
+          "us"
+        ],
+        "headers": {
+          "authorization": "Bearer BQDDk6n__YLKqIDKxBb2fvOZm6yxuOj0XeU0mCpRmBi_0UsUz2fUP-tFsl7IjT-YOCXxmvfzUMAnQ0Y4KBo"
+        },
+        "errors": {
+          "Spotify is currently not available in your country.": "Access denied in your country, use proxy/vpn"
+        },
+        "activation": {
+          "method": "spotify",
+          "marks": [
+            "No token provided",
+            "The access token expired"
+          ],
+          "url": "https://open.spotify.com/get_access_token?reason=transport&productType=web_player",
+          "src": "accessToken",
+          "dst": "authorization"
+        },
+        "urlProbe": "https://spclient.wg.spotify.com/user-profile-view/v3/profile/{username}?playlist_limit=10&artist_limit=10&market=EN",
+        "checkType": "status_code",
+        "alexaRank": 89,
+        "urlMain": "https://open.spotify.com/",
+        "url": "https://open.spotify.com/user/{username}",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      },
+      "Telegram": {
+        "tags": [
+          "messaging"
+        ],
+        "regexCheck": "^[a-zA-Z][a-zA-Z0-9_]{4,}$",
+        "checkType": "message",
+        "absenceStrs": [
+          "<meta name=\"robots\" content=\"noindex, nofollow\">",
+          "<meta property=\"twitter:title\" content=\"Telegram: Contact"
+        ],
+        "alexaRank": 154,
+        "urlMain": "https://t.me/",
+        "url": "https://t.me/{username}",
+        "usernameClaimed": "BotFather",
+        "usernameUnclaimed": "noonewouldevereverusethis7"
+      },
+      "Pinterest": {
+        "tags": [
+          "art",
+          "photo",
+          "sharing"
+        ],
+        "checkType": "message",
+        "alexaRank": 152,
+        "presenseStrs": [
+          "<!-- --> followers",
+          "<!-- --> following",
+          "<!-- --> подписчиков",
+          "<!-- --> подписок"
+        ],
+        "absenceStrs": [
+          "@undefined"
+        ],
+        "urlMain": "https://www.pinterest.com/",
+        "url": "https://www.pinterest.com/{username}/",
+        "usernameClaimed": "blue",
+        "usernameUnclaimed": "noonewouldeverusethis7"
+      }
+    },
+    "engines": {
+    "XenForo": {
+        "name": "XenForo",
+        "site": {
+            "ignore403": true,
+            "absenceStrs": [
+                "The requested page could not be found.",
+                "The specified member cannot be found. Please enter a member",
+                "\u0423\u043a\u0430\u0437\u0430\u043d\u043d\u044b\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0434\u0440\u0443\u0433\u043e\u0435 \u0438\u043c\u044f.",
+                "Le membre sp\u00e9cifi\u00e9 est introuvable. Veuillez saisir le nom complet d'un membre.",
+                "Belirtilen \u00fcye bulunamad\u0131. L\u00fctfen bir \u00fcyenin tam ad\u0131n\u0131 giriniz."
+            ],
+            "presenseStrs": [
+                "\u0412\u044b \u0434\u043e\u043b\u0436\u043d\u044b \u0431\u044b\u0442\u044c \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u044b, \u0447\u0442\u043e\u0431\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u044d\u0442\u043e \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.",
+                "\u0414\u043b\u044f \u0442\u043e\u0433\u043e, \u0447\u0442\u043e\u0431\u044b \u044d\u0442\u043e \u0441\u0434\u0435\u043b\u0430\u0442\u044c, \u043d\u0443\u0436\u043d\u043e \u0441\u043d\u0430\u0447\u0430\u043b\u0430 \u0432\u043e\u0439\u0442\u0438 \u043d\u0430 \u0444\u043e\u0440\u0443\u043c.",
+                "You must be logged-in to do that.",
+                "You must be logged in to do that.",
+                "memberHeader-content",
+                "profilePage"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}{urlSubpath}/members/?username={username}"
+        },
+        "presenseStrs": [
+            "XenForo"
+        ]
+    },
+    "phpBB/Search": {
+        "name": "phpBB/Search",
+        "site": {
+            "absenceStrs": [
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e."
+            ],
+            "presenseStrs": [
+                "postprofile",
+                " username-coloured"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}{urlSubpath}/search.php?author={username}"
+        },
+        "presenseStrs": [
+            "./memberlist.php?mode=viewprofile"
+        ]
+    },
+    "phpBB": {
+        "name": "phpBB",
+        "site": {
+            "absenceStrs": [
+                "No members found for this search criterion.",
+                "\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e \u043d\u0438 \u043e\u0434\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u043e \u0437\u0430\u0434\u0430\u043d\u043d\u044b\u043c \u043a\u0440\u0438\u0442\u0435\u0440\u0438\u044f\u043c"
+            ],
+            "presenseStrs": [
+                "You must be logged in to do that.",
+                "./memberlist.php?mode=viewprofile"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}{urlSubpath}/memberlist.php?username={username}"
+        },
+        "presenseStrs": [
+            "phpBB"
+        ]
+    },
+    "phpBB2/Search": {
+        "name": "phpBB2/Search",
+        "site": {
+            "absenceStrs": [
+                "\u041f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0442\u0435\u043c \u0438\u043b\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e"
+            ],
+            "presenseStrs": [
+                "\"postdetails"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}{urlSubpath}/search.php?search_author={username}"
+        },
+        "presenseStrs": [
+            "phpBB 2.0"
+        ]
+    },
+    "uCoz": {
+        "name": "uCoz",
+        "site": {
+            "absenceStrs": [
+                "<title>HTTP 404",
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d"
+            ],
+            "presenseStrs": [
+                "udtlb\">\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c:</div>",
+                "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u0434\u0430\u043d\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u0432\u043e\u0439\u0434\u0438\u0442\u0435 \u043d\u0430 \u0441\u0430\u0439\u0442 \u043a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c.",
+                "<center><b>\u041b\u0438\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435</b>",
+                "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u0434\u0430\u043d\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u043e\u0439\u0434\u0438\u0442\u0435 \u043d\u0430 \u0441\u0430\u0439\u0442 \u043a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c.",
+                "<img alt=\"\" name=\"rankimg\" border=\"0\" src=\"/.s/rnk/",
+                "\u0413\u043e\u0441\u0442\u044f\u043c \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043e \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439.",
+                "profile-section-name",
+                "webo4ka_dannii",
+                "\u0414\u0430\u0442\u0430 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438"
+            ],
+            "checkType": "message",
+            "regexCheck": "^[^\\.]+$",
+            "url": "{urlMain}/index/8-0-{username}"
+        }
+    },
+    "vBulletin": {
+        "name": "vBulletin",
+        "site": {
+            "absenceStrs": [
+                "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d \u0438 \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430.",
+                "Bu \u00dcye kay\u0131tl\u0131 \u00dcyemiz de\u011fildir. Bu sebebten dolay\u0131 \u00dcyeye ait Profil g\u00f6sterilemiyor.",
+                "This user has not registered and therefore does not have a profile to view.",
+                "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447 \u043d\u0435 \u0437\u0430\u0440\u0435\u0454\u0441\u0442\u0440\u043e\u0432\u0430\u043d\u0438\u0439 \u0456 \u043d\u0435 \u043c\u0430\u0454 \u043f\u0440\u043e\u0444\u0456\u043b\u044e, \u044f\u043a\u0438\u0439 \u043c\u043e\u0436\u043d\u0430 \u043f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438.",
+                "Deze gebruiker is niet geregistreerd, zodat je zijn of haar profiel niet kunt bekijken."
+            ],
+            "checkType": "message",
+            "errors": {
+                "\u041f\u0440\u043e\u0441\u0442\u0438\u0442\u0435, \u043d\u043e \u0432\u0430\u0448 IP \u0432 \u0441\u043f\u0438\u0441\u043a\u0435 \u0437\u0430\u043f\u0440\u0435\u0449\u0435\u043d\u043d\u044b\u0445 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0435\u0439 \u0444\u043e\u0440\u0443\u043c\u0430": "IP ban",
+                "You have been banned": "IP ban",
+                "The administrator has banned your IP address": "IP ban",
+                "\u0418\u0437\u0432\u0438\u043d\u0438\u0442\u0435, \u0441\u0435\u0440\u0432\u0435\u0440 \u043f\u0435\u0440\u0435\u0433\u0440\u0443\u0436\u0435\u043d. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0437\u0430\u0439\u0442\u0438 \u043f\u043e\u0437\u0436\u0435.": "Server is overloaded"
+            },
+            "url": "{urlMain}{urlSubpath}/member.php?username={username}"
+        },
+        "presenseStrs": [
+            "content=\"vBulletin "
+        ]
+    },
+    "Discourse": {
+        "name": "Discourse",
+        "site": {
+            "presenseStrs": [
+                "<meta name=\"generator\" content=\"Discourse"
+            ],
+            "absenceStrs": [
+                "Oops! That page doesn\u2019t exist or is private.",
+                "wrap not-found-container"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}/u/{username}/summary"
+        },
+        "presenseStrs": [
+            "<meta name=\"generator\" content=\"Discourse"
+        ]
+    },
+    "Wordpress/Author": {
+        "name": "Wordpress/Author",
+        "site": {
+            "presenseStrs": [
+                "author-",
+                "author/"
+            ],
+            "absenceStrs": [
+                "error404"
+            ],
+            "checkType": "message",
+            "requestHeadOnly": false,
+            "url": "{urlMain}{urlSubpath}/author/{username}/"
+        },
+        "presenseStrs": [
+            "/wp-admin",
+            "/wp-includes/wlwmanifest.xml"
+        ]
+    },
+    "Flarum": {
+        "name": "Flarum",
+        "site": {
+            "presenseStrs": [
+                "\"attributes\":{\"username\""
+            ],
+            "absenceStrs": [
+                "NotFound"
+            ],
+            "checkType": "message",
+            "url": "{urlMain}/u/{username}"
+        },
+        "presenseStrs": [
+            "flarum-loading-error"
+        ]
+    },
+    "engine404": {
+        "name": "engine404",
+        "site": {
+            "checkType": "status_code"
+        }
+    },
+    "engineRedirect": {
+        "name": "engineRedirect",
+        "site": {
+            "checkType": "response_url"
+        }
+    },
+    "engine404get": {
+        "name": "engine404get",
+        "site": {
+            "checkType": "status_code",
+            "requestHeadOnly": false
+        }
+    },
+    "engine404message": {
+        "name": "engine404message",
+        "site": {
+            "checkType": "message",
+            "absenceStrs": [
+                "404"
+            ]
+        }
+    },
+    "op.gg": {
+        "name": "op.gg",
+        "site": {
+            "checkType": "message",
+            "presenseStrs": [
+                "<div class=\"profile-icon\">"
+            ],
+            "absenceStrs": [
+                "<h2 class=\"header__title\">This summoner is not registered"
+            ],
+            "alexaRank": 331
+        }
+    }
+},
+  "tags": [
+    "gaming",
+    "coding",
+    "photo",
+    "music",
+    "blog",
+    "finance",
+    "freelance",
+    "dating",
+    "tech",
+    "forum",
+    "porn",
+    "erotic",
+    "webcam",
+    "video",
+    "movies",
+    "hacking",
+    "art",
+    "discussion",
+    "sharing",
+    "writing",
+    "wiki",
+    "business",
+    "shopping",
+    "sport",
+    "books",
+    "news",
+    "documents",
+    "travel",
+    "maps",
+    "hobby",
+    "apps",
+    "classified",
+    "career",
+    "geosocial",
+    "streaming",
+    "education",
+    "networking",
+    "torrent",
+    "science",
+    "medicine",
+    "reading",
+    "stock",
+    "messaging",
+    "trading",
+    "links",
+    "fashion",
+    "tasks",
+    "military",
+    "auto",
+    "gambling",
+    "cybercriminal",
+    "review",
+    "bookmarks",
+    "design",
+    "tor",
+    "i2p",
+    "q&a",
+    "crypto",
+    "ai"
+]
+}
