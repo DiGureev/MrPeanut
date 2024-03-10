@@ -2,10 +2,7 @@ import json
 import os
 from opengraphio import OpenGraphIO
 
-from dotenv import load_dotenv
-load_dotenv()
-
-KEY = os.getenv("OPENGRAPH_API_KEY")
+KEY = os.environ.get("OPENGRAPH_API_KEY")
 
 opengraph = OpenGraphIO({ 'app_id': KEY })
 
