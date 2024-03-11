@@ -2,7 +2,6 @@ import json
 import os
 from opengraphio import OpenGraphIO
 
-# For deploy
 KEY = os.environ.get("OPENGRAPH_API_KEY")
 
 opengraph = OpenGraphIO({ 'app_id': KEY , "timeout": 120})
@@ -22,11 +21,8 @@ def getOpengraphData(username):
         new_url = value["url"].replace("}", "").replace("{username", username)
         all_urls.append(new_url)
 
-        print(all_urls)
-
    for url in all_urls:
     response = opengraph.get_site_info(url)
-    print(response)
     if "error" in response.keys():
         pass
     else:
