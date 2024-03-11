@@ -4,7 +4,7 @@ from opengraphio import OpenGraphIO
 
 KEY = os.environ.get("OPENGRAPH_API_KEY")
 
-opengraph = OpenGraphIO({ 'app_id': KEY })
+opengraph = OpenGraphIO({ 'app_id': KEY , "timeout": 120})
 
 def readFile():
     result = {}
@@ -37,4 +37,4 @@ def getOpengraphData(username):
                 if 'wikipedia' in response["openGraph"]['title'].lower():
                     sites["Wikipedia"] = response["openGraph"]
                     
-   return json.dumps(sites)
+   return sites
