@@ -30,11 +30,16 @@ def getOpengraphData(username):
             pass
         else:
             response["openGraph"]['url'] = response['url']
-
-            if "site_name" in response["openGraph"].keys():
+            if "site_name" in  response["openGraph"].keys():
                 sites[response["openGraph"]["site_name"]] = response["openGraph"]
+                sites[response["openGraph"]["site_name"]]["images"] = response["htmlInferred"]["images"]
             else:
-                if 'wikipedia' in response["openGraph"]['title'].lower():
-                    sites["Wikipedia"] = response["openGraph"]
+                sites[response["htmlInferred"]["site_name"]] = response["openGraph"]
+                sites[response["htmlInferred"]["site_name"]]["images"] = response["htmlInferred"]["images"]
+                
+            sites["images"] = response["htmlInferred"]["images"]
                     
    return sites
+
+a = getOpengraphData("mo_narchi")
+print(a)
