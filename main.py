@@ -22,6 +22,7 @@ def checkFav():
 
 @app.route("/<username>")
 def home(username):
+    print(username)
     if os.path.exists(f"./{username}.json"):
         print("Exist")
         result = readFile(username)
