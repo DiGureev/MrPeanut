@@ -40,6 +40,3 @@ def getOpengraphData(username):
             sites["images"] = response["htmlInferred"]["images"]
                     
    return sites
-
-a = getOpengraphData("mo_narchi")
-print(a)
