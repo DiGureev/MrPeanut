@@ -36,5 +36,4 @@ def getOpengraphData(username):
             else:
                 sites[response["htmlInferred"]["site_name"]] = response["openGraph"]
                 sites[response["htmlInferred"]["site_name"]]["images"] = response["htmlInferred"]["images"]
-                                    
    return sites
