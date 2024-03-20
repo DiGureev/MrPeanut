@@ -29,25 +29,28 @@ def getOpengraphData(username):
    all_urls = getUrls(username)
 
    for url in all_urls:
-    print(url)
+
     response = opengraph.get_site_info(url)
     if "error" in response.keys():
         pass
     else:
-        if "error" in response["openGraph"].keys():
-            if "site_name" in response["htmlInferred"].keys():
-                name = response["htmlInferred"]["site_name"]
-            if 'title' in response["hybridGraph"].keys():
-                name = response["hybridGraph"]["title"].split(" ")[:3]
-                name = ' '.join(name)
-            else:
-                arrayName = url.split(".com")
-                name = arrayName[0]
+        if "error" in response["openGraph"].keys() and "instagram" in url:
+     
+            # if "site_name" in response["htmlInferred"].keys():
+            #     name = response["htmlInferred"]["site_name"]
+            # if 'title' in response["hybridGraph"].keys():
+            #     name = response["hybridGraph"]["title"].split(" ")[:3]
+            #     name = ' '.join(name)
+            # else:
+            #     arrayName = url.split(".com")
+            #     name = arrayName[0]
             
-            sites[name] = {'url': response["hybridGraph"]["url"],
+            sites[response["hybridGraph"]["title"]] = {'url': response["hybridGraph"]["url"],
                             "images": response["htmlInferred"]["images"],
-                            "title": name,
+                            "title": response["hybridGraph"]["title"],
                             "description": "This site may require login to view information. Check the URL manually for reliability"}
+        elif "error" in response["openGraph"].keys() and "instagram" not in url:
+            pass
         else:
             response["openGraph"]['url'] = response['url']
             if "site_name" in  response["openGraph"].keys():
@@ -57,7 +60,3 @@ def getOpengraphData(username):
                 sites[response["htmlInferred"]["site_name"]] = response["openGraph"]
                 sites[response["htmlInferred"]["site_name"]]["images"] = response["htmlInferred"]["images"]
    return sites
-
-
-a = getOpengraphData("dianagureev")
-print(a)
