@@ -29,20 +29,20 @@ def getOpengraphData(username):
    all_urls = getUrls(username)
 
    for url in all_urls:
+    print(url)
     response = opengraph.get_site_info(url)
     if "error" in response.keys():
         pass
     else:
         if "error" in response["openGraph"].keys():
-            print(response)
             if "site_name" in response["htmlInferred"].keys():
                 name = response["htmlInferred"]["site_name"]
             if 'title' in response["hybridGraph"].keys():
-                name = response["hybridGraph"]["title"]
-            if "web.archive.org" in url:
-                name = "WebArchive"
-            if "baidu" in url:
-                pass
+                name = response["hybridGraph"]["title"].split(" ")[:3]
+                name = ' '.join(name)
+            else:
+                arrayName = url.split(".com")
+                name = arrayName[0]
             
             sites[name] = {'url': response["hybridGraph"]["url"],
                             "images": response["htmlInferred"]["images"],
