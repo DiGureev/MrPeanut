@@ -6,20 +6,27 @@ KEY = os.environ.get("OPENGRAPH_API_KEY")
 
 opengraph = OpenGraphIO({ 'app_id': KEY , "timeout": 120})
 
-def readFile():
+def readFile(doc):
     result = {}
-    with open(f"data.json","r") as f:
+    with open(doc,"r") as f:
         result = json.load(f)
     return result["sites"]
 
-all_sites = readFile()
-all_urls = []
-sites = {}
+all_sites = readFile("data.json")
 
-def getOpengraphData(username):
+def getUrls(username):
+   all_urls = []
    for key, value in all_sites.items():
         new_url = value["url"].replace("}", "").replace("{username", username)
         all_urls.append(new_url)
+    
+   return all_urls
+
+
+def getOpengraphData(username):
+   sites = {}
+
+   all_urls = getUrls(username)
 
    for url in all_urls:
     response = opengraph.get_site_info(url)
@@ -27,7 +34,19 @@ def getOpengraphData(username):
         pass
     else:
         if "error" in response["openGraph"].keys():
-            pass
+            if "site_name" in response["htmlInferred"].keys():
+                name = response["htmlInferred"]["site_name"]
+            if "web.archive.org" in url:
+                name = "WebArchive"
+            if "baidu" in url:
+                pass
+            else:
+                name = response["hybridGraph"]["url"]
+            
+            sites[name] = {'url': response["hybridGraph"]["url"],
+                            "images": response["htmlInferred"]["images"],
+                            "title": name,
+                            "description": "This site may require login to view information. Check the URL manually for reliability"}
         else:
             response["openGraph"]['url'] = response['url']
             if "site_name" in  response["openGraph"].keys():
