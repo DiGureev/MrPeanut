@@ -34,14 +34,15 @@ def getOpengraphData(username):
         pass
     else:
         if "error" in response["openGraph"].keys():
+            print(response)
             if "site_name" in response["htmlInferred"].keys():
                 name = response["htmlInferred"]["site_name"]
+            if 'title' in response["hybridGraph"].keys():
+                name = response["hybridGraph"]["title"]
             if "web.archive.org" in url:
                 name = "WebArchive"
             if "baidu" in url:
                 pass
-            else:
-                name = response["hybridGraph"]["url"]
             
             sites[name] = {'url': response["hybridGraph"]["url"],
                             "images": response["htmlInferred"]["images"],
@@ -56,3 +57,7 @@ def getOpengraphData(username):
                 sites[response["htmlInferred"]["site_name"]] = response["openGraph"]
                 sites[response["htmlInferred"]["site_name"]]["images"] = response["htmlInferred"]["images"]
    return sites
+
+
+a = getOpengraphData("dianagureev")
+print(a)
