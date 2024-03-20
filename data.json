@@ -66,23 +66,6 @@
         "usernameClaimed": "test",
         "usernameUnclaimed": "noonewouldeverusethis7"
       },
-      "Baidu": {
-        "absenceStrs": [
-          "error_404_iframe"
-        ],
-        "presenseStrs": [
-          "user_name"
-        ],
-        "url": "https://tieba.baidu.com/home/main?un={username}",
-        "urlMain": "https://tieba.baidu.com",
-        "usernameClaimed": "reneecong",
-        "usernameUnclaimed": "noonewouldeverusethis7",
-        "checkType": "message",
-        "tags": [
-          "cn"
-        ],
-        "alexaRank": 3
-      },
       "Facebook": {
         "regexCheck": "^[a-zA-Z0-9_\\.]{3,49}(?<!\\.com|\\.org|\\.net)$",
         "checkType": "message",
