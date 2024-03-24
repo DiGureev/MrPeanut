@@ -45,7 +45,7 @@ def getOpengraphData(username):
             #     arrayName = url.split(".com")
             #     name = arrayName[0]
             
-            sites[response["hybridGraph"]["title"]] = {'url': response["hybridGraph"]["url"],
+            sites["Instagram"] = {'url': response["hybridGraph"]["url"],
                             "images": response["htmlInferred"]["images"],
                             "title": response["hybridGraph"]["title"],
                             "description": "This site may require login to view information. Check the URL manually for reliability"}
